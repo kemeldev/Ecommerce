@@ -1,0 +1,16 @@
+import { create } from 'zustand'
+import { products as productsList } from '../productsData/productsData.json'
+
+const useFiltersStore = create((set) => ({
+  globalFilters: {
+    category: 'all',
+    brand: 'all',
+    discountPercentage: 30
+  },
+  productsList,
+  globalProducts: productsList,
+  setGlobalFilters: (newFilters) => set((state) => ({ globalFilters: { ...state.globalFilters, ...newFilters } })),
+  setGlobalProducts: (newProducts) => set({ globalProducts: newProducts })
+}))
+
+export default useFiltersStore

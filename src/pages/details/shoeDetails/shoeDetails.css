@@ -1,0 +1,80 @@
+.shoeDetail_mainContainer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.shoeDetail_topData {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.shoeDetail_mainImg {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+}
+
+.shoeDetail_mainImg img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.9);
+}
+
+.shoeDetail_content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 2rem 4rem 0;
+  justify-content: space-around;
+}
+
+.shoeDetail_content h1 {
+  font-style: italic;
+}
+
+.shoeDetail_sizesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  overflow: hidden;
+}
+
+.shoeDetail_sizesGrid div {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(121, 121, 121);
+  outline: 2px solid rgb(0, 0, 0);
+  text-align: center;
+  position: relative;
+  margin: 1px;
+  cursor: pointer;
+
+}
+
+.shoeDetail_sizesGrid div:hover {
+  background-color: rgb(2, 74, 138);
+}
+
+/* // Second images */
+
+.shoeDetail_otherImgs {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  height: 400px;
+}
+
+.shoeDetail_otherImgs img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.9);
+}

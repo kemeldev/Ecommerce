@@ -1,0 +1,9 @@
+.checkout_mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.checkout_summary {
+  border: #ccc solid 2px;
+}
