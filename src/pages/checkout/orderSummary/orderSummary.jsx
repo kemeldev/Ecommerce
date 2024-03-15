@@ -1,33 +1,40 @@
-import ButtonGeneral from '../../../components/buttonGeneral'
+import useCartStore from '../../../store/cartStore';
 import './orderSummary.css'
 
 export function OrderSummary () {
+  const {cartList}= useCartStore()
+
+  const subtotalAmount = cartList.reduce((accumulator, currentObject) => {
+    return accumulator + currentObject.price;
+  }, 0);
+  const fees = 0
+  const discountApplied = 0
+  const totalAmount = subtotalAmount+fees-discountApplied
   return (
     <>
       
       <div className='summary_mainContainer'>
         <div className='summary_summary'>
-          <h3>Order summary</h3>
+          <h3>ORDER SUMMARY</h3>
           <div className='summary_amount'>
             <h4>Subtotal</h4>
-            <p>$ 170</p>
+            <p>$ {subtotalAmount}</p>
           </div>
           <div className='summary_amount'>
             <h4>Discount</h4>
-            <p>$ -50</p>
+            <p>$ {discountApplied}</p>
           </div>
           <div className='summary_amount'>
             <h4>Fees</h4>
-            <p>$ 20</p>
+            <p>$ {fees}</p>
           </div>
           <div className='summary_total'>
             <h4>Total</h4>
-            <p>$ 140</p>
+            <p>$ {totalAmount.toFixed(2)}</p>
           </div>
           
         </div>
 
-        <ButtonGeneral title="Procceed with payment" />
       </div>
         
     </>

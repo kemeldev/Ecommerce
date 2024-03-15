@@ -76,16 +76,17 @@ export function ShippingAddress () {
           />
         </form>
 
-        <h2>SHIPPING ADDRESS ADDRESS</h2>
-        <label htmlFor="sameAs">Same as Billing Address:</label>
-        <input 
-          type="checkbox" 
-          id="sameAs" 
-          name="sameAs" 
-          checked={sameAsBilling} 
-          onChange={(e) => setSameAsBilling(e.target.checked)} 
-        />
-
+        <h2>SHIPPING ADDRESS </h2>
+        <div className='shipping_sameAs'>
+          <label htmlFor="sameAs">Same as Billing Address:   </label>
+          <input 
+            type="checkbox" 
+            id="sameAs" 
+            name="sameAs" 
+            checked={sameAsBilling} 
+            onChange={(e) => setSameAsBilling(e.target.checked)} 
+          />
+        </div>
         
           <form action="*">
             <label htmlFor="shippingName">Name:</label>

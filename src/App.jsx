@@ -6,14 +6,18 @@ import NotFound from './pages/notFound/notFound'
 import Details from './pages/details/details'
 import ShoppingCart from './pages/shoppingCart/shoppingCart'
 import Checkout from './pages/checkout/checkout'
+import SignIn from './components/signIn/signIn'
+import Register from './components/register/register'
 
 
 function App() {
 
   return (
     <>
+      <SignIn />
+      <Register />
       <Routes>
-          <Route path='/Ecommerce' element={<Home />} />
+          <Route path='/Ecommerce/' element={<Home />} />
           <Route path='/products' element={<Products />} />
           <Route path='/details/:id' element={<Details />} />
           <Route path='/shoppingCart' element={<ShoppingCart />} />

@@ -1,7 +1,9 @@
 import { heroAdidas } from '../../../assets/images'
+import useRegister from '../../../store/registerStore'
 import './special.css'
 
 function Special() {
+  const {setRegisterOpen} = useRegister()
 
   return (
     <>
@@ -15,7 +17,7 @@ function Special() {
             <h2><strong>SPECIAL</strong>  OFFER</h2>
             <p>Create an account and get 40% of discount un your first pair of shoes</p>
             <div className='special_btns'>
-              <button>
+              <button onClick={()=> setRegisterOpen()}>
                 Register Now
               </button>
             </div>

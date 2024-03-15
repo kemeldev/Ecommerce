@@ -8,6 +8,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  padding: 1rem 2rem;
 }
 
 .checkout_back {
@@ -21,4 +22,14 @@
 
 .checkout_back:hover {
   color: rgb(148, 6, 6);
+}
+
+@media screen and (max-width: 800px) {
+  .checkoutPage {
+    flex-direction: column;
+  }
+
+  .payData {
+    width: 100%;
+  }
 }

@@ -9,8 +9,8 @@ function Summary() {
   const subtotalAmount = cartList.reduce((accumulator, currentObject) => {
     return accumulator + currentObject.price;
   }, 0);
-  const fees = 20
-  const discountApplied = 50
+  const fees = 0
+  const discountApplied = 0
   const totalAmount = subtotalAmount+fees-discountApplied
 
 

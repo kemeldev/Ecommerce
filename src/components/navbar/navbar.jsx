@@ -3,9 +3,11 @@ import { shoppingCart } from '../../assets/icons'
 import { shoestoreLogo } from '../../assets/images'
 import './navbar.css'
 import useCartStore from '../../store/cartStore'
+import useSignIn from '../../store/signInStore'
 
 function Navbar() {
   const {cartList} = useCartStore()
+  const {setSignInOpen} = useSignIn()
 
   return (
     <>
@@ -20,7 +22,7 @@ function Navbar() {
         </Link>
 
         <div className='navbar_SignAndCart'>
-          <p>Sign In /</p>
+          <p onClick={()=> setSignInOpen()}>Sign In /</p>
           <Link to="/shoppingCart">
           <div className='navbar_shoppingCartIcon'>
             <img src={shoppingCart} alt="shopping cart icon" />

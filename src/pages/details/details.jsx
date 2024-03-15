@@ -7,12 +7,15 @@ import ShoeDetails from './shoeDetails/shoeDetails'
 import { useEffect } from 'react'
 import { shoppingCart } from '../../assets/icons'
 import useCartStore from '../../store/cartStore'
+import useSignIn from '../../store/signInStore'
 
 function Details() {
   const { state } = useLocation()
   // const { id } = useParams()
   // const numericId = parseInt(id)
   const {cartList, resetSizeError} = useCartStore()
+  const {setSignInOpen} = useSignIn()
+
 
   useEffect(() => {
     resetSizeError()
@@ -32,7 +35,7 @@ function Details() {
           </h3>
         </Link>
         <div className='navbar_SignAndCart'>
-          <p>Sign In /</p>
+          <p onClick={()=> setSignInOpen()}>Sign In /</p>
           <Link to="/shoppingCart">
             <div className='navbar_shoppingCartIcon'>
               <img src={shoppingCart} alt="shopping cart icon" />

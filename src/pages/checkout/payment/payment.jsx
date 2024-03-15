@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { mastercard, paypal, visa } from '../../../assets/icons'
 import './payment.css'
+import ButtonGeneral from '../../../components/buttonGeneral';
 
 export function Payment() {
   const [cardNumber, setCardNumber] = useState('');
@@ -18,9 +19,9 @@ export function Payment() {
   return (
     <>
       <div className='payment_mainContainer'>
-        <h2>Payment</h2>
+        <h2>PAYMENT</h2>
         <p>Choose a payment method</p>
-        <div>
+        <div className='payment_method'>
           <img src={visa} alt="visa logo" />
           <img src={mastercard} alt="mastercard logo" />
           <img src={paypal} alt="paypal logo" />
@@ -29,6 +30,7 @@ export function Payment() {
         <form onSubmit={handlePaymentSubmit}>
           <label htmlFor="cardNumber">Card number</label>
           <input
+            className='payment_cardNumber'
             type="text"
             id="cardNumber"
             value={cardNumber}
@@ -43,8 +45,15 @@ export function Payment() {
             onChange={(e) => setExpirationMonth(e.target.value)}
             required
           >
-            <option value="">Select Month</option>
-            {/* Add options for months */}
+            {Array.from({ length: 12 }, (_, i) => {
+              const monthIndex = i + 1;
+              const monthName = new Date(2022, i).toLocaleString('default', { month: 'long' });
+              return (
+                <option key={monthIndex} value={monthIndex}>
+                  {monthName}
+                </option>
+              );
+            })}
           </select>
 
           <label htmlFor="expirationYear">Expiration year</label>
@@ -54,12 +63,19 @@ export function Payment() {
             onChange={(e) => setExpirationYear(e.target.value)}
             required
           >
-            <option value="">Select Year</option>
-            {/* Add options for years */}
+            {Array.from({ length: 10 }, (_, i) => {
+              const year = new Date().getFullYear() + i;
+              return (
+                <option key={year} value={year}>
+                  {year}
+                </option>
+              );
+            })}
           </select>
 
           <label htmlFor="cvs">CVS</label>
           <input
+            className='payment_cardNumber'
             type="text"
             id="cvs"
             value={cvs}
@@ -67,8 +83,15 @@ export function Payment() {
             required
           />
 
-          <button type="submit">Pay Now</button>
         </form>
+        <div className='payment_payBtn'>
+        <ButtonGeneral title="Procceed with payment" />
+        </div>
+
+        <h4>
+          We´re currently working to implement this feature
+        </h4>
+
       </div>
     </>
   );
