@@ -1,24 +1,28 @@
 .button_mainContainer {
   background-color: black;
   color: white;
-  width: 50%;
+  width: 60%;
   height: 30px;
   box-shadow: 5px 5px 1px rgba(255, 255, 255, 1);
   display: flex;
   align-items: center;
   cursor: pointer;
-
 }
 
 .button_mainContainer:hover {
-  background-color: rgb(39, 39, 39);
+  background-color: rgb(255, 255, 255);
   transform: scale(0.95);
+  color: black;
+  box-shadow: 5px 5px 1px rgb(3, 3, 3);
 }
 
-.button_mainContainer button {
-  background-color: transparent;
-  border: none;
+.button_mainContainer {
   padding-left: 2rem;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.button_mainContainer:active {
+  transform: scale(0.9);
+  background-color: rgb(187, 187, 187);
 }

@@ -27,6 +27,11 @@
   position: relative;
   background-color: black;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+.brands_gridElement:hover {
+  transform: scale(.95);
 }
 
 .brands_gridElement::after {
@@ -54,4 +59,14 @@
   z-index: 2;
   font-size: 24px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+@media screen and (max-width: 500px) {
+
+  .brands_mainContainer h2 {
+    font-size: 28px;
+  }
+
+
+
 }

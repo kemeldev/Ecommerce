@@ -1,18 +1,38 @@
+import { Link } from 'react-router-dom'
 import { facebook, instagram, twitter } from '../../assets/icons'
-import { shoestoreLogo, shoestoreLogoBlack } from '../../assets/images'
+import { shoestoreLogoBlack } from '../../assets/images'
 import './footer.css'
+import useFiltersStore from '../../store/filterstore'
 
 function Footer() {
+  const { setGlobalFilters, setGlobalProducts } = useFiltersStore()
+  const handleCategoryChange = (category) => {
+    setGlobalFilters({ category, brand: 'all' })
+    const filteredProducts = useFiltersStore.getState().productsList.filter(
+      (product) => product.category === category
+    )
+    setGlobalProducts(filteredProducts)
+  }
 
+  const handleBrandChange = (brand) => {
+    setGlobalFilters({ category: "all", brand: brand })
+    const filteredProducts = useFiltersStore.getState().productsList.filter(
+      (product) => product.brand === brand
+    )
+    setGlobalProducts(filteredProducts)
+  }
   return (
     <>
       <footer className='footer_mainContainer'>
         <div className='footer_flexContainer'>
 
           <div className='footer_flexContainer_mainData'>
-            <div>
-              <img src={shoestoreLogoBlack} alt="company log" />
-            </div>
+            <Link to="/Ecommerce">
+              <div>
+                <img src={shoestoreLogoBlack} alt="company log" />
+              </div>
+            </Link>
+            
             <p>Get the best products and brands.</p> <p> Find deals and more</p>
             <div className='footer_social'>
               <div>
@@ -29,19 +49,19 @@ function Footer() {
 
           <div className='footer_flexContainer_categories'>
             <h4>Categories</h4>
-            <p>Outdoor</p>
-            <p>Training</p>
-            <p>Running</p>
-            <p>Style</p>
-            <p>Football</p>
+            <p onClick={() => handleCategoryChange("outdoor")}>Outdoor</p>
+            <p onClick={() => handleCategoryChange("training")}>Training</p>
+            <p onClick={() => handleCategoryChange("running")}>Running</p>
+            <p onClick={() => handleCategoryChange("tennis")}>Style</p>
+            <p onClick={() => handleCategoryChange("football")}>Football</p>
           </div>
 
           <div className='footer_flexContainer_brands'>
             <h4>Brands</h4>
-            <p>Converse</p>
-            <p>Adidas</p>
-            <p>Nike</p>
-            <p>Under Armour</p>
+            <p onClick={() => handleBrandChange("converse")}>Converse</p>
+            <p onClick={() => handleBrandChange("adidas")}>Adidas</p>
+            <p onClick={() => handleBrandChange("nike")}>Nike</p>
+            <p onClick={() => handleBrandChange("under armour")}>Under Armour</p>
           </div>
 
           <div className='footer_flexContainer_contact'>

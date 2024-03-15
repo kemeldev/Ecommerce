@@ -1,18 +1,21 @@
 import { closeIcon } from '../../../assets/icons'
 import './CartItem.css'
+import PropTypes from 'prop-types';
+import useCartStore from '../../../store/cartStore';
 
-function CartItem() {
+function CartItem({title,size, price, image}) {
+  const {removeFromCart} = useCartStore()
 
   return (
     <>
       <div className='cartItem_mainContainer'>
         <div className='cartItem_image'>
-          <img src="https://assets.adidas.com/images/w_940,f_auto,q_auto/cd16ddc733aa4a378408afd200db5ecb_9366/GV9137_01_standard.jpg" alt="shoe details" />
+          <img src={image} alt="shoe details" />
         </div>
         <div className='cartItem_data'>
-          <h4>Tennis title</h4>
-          <p>$ 120.99</p>
-          <h6>Size 12</h6>
+          <h4>{title}</h4>
+          <p>$ {price}</p>
+          <h6>Size {size}</h6>
           <h6>Amount</h6>
           <select>
             <option value="1">1</option>
@@ -23,7 +26,7 @@ function CartItem() {
           </select>
         </div>
         <div className='cartItem_remove'>
-          <div>
+          <div onClick={()=> removeFromCart(title, size )}>
             <img src={closeIcon} alt="X sign to eliminate item" />
           </div>
         </div>
@@ -32,5 +35,13 @@ function CartItem() {
     </>
   )
 }
+
+CartItem.propTypes = {
+  title: PropTypes.string,
+  size: PropTypes.number,
+  price: PropTypes.number,
+  image: PropTypes.string ,
+  
+};
 
 export default CartItem

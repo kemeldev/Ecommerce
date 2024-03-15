@@ -15,7 +15,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #555555;
+  background-color: #bdbdbd;
 
   /* font-synthesis: none; */
   text-rendering: optimizeLegibility;
@@ -42,4 +42,13 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: roboto, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
 }

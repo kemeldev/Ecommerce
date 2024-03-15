@@ -4,17 +4,18 @@
   justify-content: start;
   position: relative;
   border: #333 solid 2px;
+  padding: 0 1rem;
 }
 
 .cartItem_image {
-  flex: 0 0 30%;
+  width: 40%;
 
 }
 
 .cartItem_image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .cartItem_data {

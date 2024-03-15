@@ -1,8 +1,10 @@
 import { Accordion } from '../../../components/accordion'
 import { brands, categories, promotions } from '../../../constants'
 import './filterContainer.css'
+import PropTypes from 'prop-types';
 
 function FilterContainer({isOpen}) {
+  
 
   const filterBrands = brands
   const filterCategories = categories
@@ -23,6 +25,10 @@ function FilterContainer({isOpen}) {
       </div>
     </main>
   )
+}
+
+FilterContainer.propTypes = {
+  isOpen: PropTypes.bool,
 }
 
 export default FilterContainer

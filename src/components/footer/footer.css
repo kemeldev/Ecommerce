@@ -49,6 +49,18 @@
 
 }
 
+.footer_flexContainer_categories>p,
+.footer_flexContainer_brands>p {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer_flexContainer_categories>p:hover,
+.footer_flexContainer_brands>p:hover {
+  transform: translateX(0.5rem);
+  color: red;
+}
+
 .footer_flexContainer_categories h4,
 .footer_flexContainer_brands h4,
 .footer_flexContainer_contact h4 {

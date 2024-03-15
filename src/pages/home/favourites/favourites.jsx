@@ -3,6 +3,7 @@ import ShoeData from '../../../components/shoeData'
 import './favourites.css'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function Favourites({title}) {
   const [popularProducts, setPopularProducts] = useState([])
@@ -42,6 +43,11 @@ function Favourites({title}) {
 
         <div className='favourite_List'>
           {popularProducts.map((product) => (
+            <Link
+              to={`/details/${product.id}`}
+              key={product.id}
+              state={product}
+                  >
             <ShoeData
               key={product.id}
               title={product.title}
@@ -50,6 +56,7 @@ function Favourites({title}) {
               brand={product.brand}
               discount={product.discountPercentage}
             />
+            </Link>
           ))}
         </div>
         

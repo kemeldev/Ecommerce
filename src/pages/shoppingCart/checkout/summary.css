@@ -1,0 +1,50 @@
+.summary_mainContainer {
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+.summary_summary {
+  width: 80%;
+}
+
+.summary_btn {
+  padding: 2rem 0rem;
+}
+
+.summary_summary {
+  font-size: larger;
+}
+
+.summary_summary h3 {
+  padding-bottom: 1rem;
+}
+
+.summary_amount {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.summary_total {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.summary_total::before {
+  content: "";
+  background-color: white;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: -50%;
+}
+
+.summary_total p {
+  font-weight: bold;
+  color: rgb(3, 3, 94);
+}

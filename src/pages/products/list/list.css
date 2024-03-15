@@ -1,13 +1,14 @@
 .list_mainContainer {
   display: flex;
   flex-direction: column;
-
+  background-color: gray;
 }
 
 
 .list_productCatalog {
   display: flex;
   position: relative;
+  padding: 1rem;
 }
 
 .list_title {
@@ -17,6 +18,7 @@
   padding: 0 4rem;
   justify-content: space-between;
   align-items: center;
+  font-style: italic;
 }
 
 .list_filters {
@@ -53,4 +55,12 @@
   position: absolute;
   top: 0;
   right: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .list_title {
+    height: 4rem;
+    padding: 0 0.5rem;
+    font-size: small;
+  }
 }

@@ -1,12 +1,19 @@
 import { useEffect, useState } from 'react'
 import './hero.css'
 import { heroAdidas, heroConverse, heroNike } from '../../../assets/images'
+import { Link } from 'react-router-dom'
+import useFiltersStore from '../../../store/filterstore'
 
 function Hero() {
   const heroImages = [heroAdidas, heroConverse, heroNike]
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [imageActive, setImageActive] = useState(true)
+  const { productsList, setGlobalProducts, setGlobalFilters } = useFiltersStore()
 
+  const handleFilterChange = () => {
+    setGlobalFilters({ category: "all", brand: 'all' })
+    setGlobalProducts(productsList)
+  }
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -36,9 +43,11 @@ function Hero() {
 
           <div className='hero_content_text'>
             <p>EXPRESS YOUR STYLE SOMETHING THAT MATTERS</p>
-            <button className='hero_showNowBtn'>
-              SHOP NOW
-            </button>
+            <Link to="/products">
+              <button className='hero_showNowBtn' onClick={()=> handleFilterChange()}>
+                SHOP NOW
+              </button>
+            </Link>
           </div>
 
           <div className="carousel_mainSlider">

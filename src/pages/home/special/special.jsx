@@ -14,9 +14,11 @@ function Special() {
           <div className='special_text'>
             <h2><strong>SPECIAL</strong>  OFFER</h2>
             <p>Create an account and get 40% of discount un your first pair of shoes</p>
-            <button>
-              Register Now
-            </button>
+            <div className='special_btns'>
+              <button>
+                Register Now
+              </button>
+            </div>
             
           </div>
 

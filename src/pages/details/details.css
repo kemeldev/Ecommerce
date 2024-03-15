@@ -1,0 +1,15 @@
+.details_navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.details_back {
+  color: black;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.details_back:hover {
+  color: rgb(165, 8, 8);
+}

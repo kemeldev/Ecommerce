@@ -63,3 +63,10 @@
   cursor: pointer;
   padding-left: 1rem;
 }
+
+@media screen and (max-width: 500px) {
+  .accordion-button span {
+    font-size: medium;
+
+  }
+}
