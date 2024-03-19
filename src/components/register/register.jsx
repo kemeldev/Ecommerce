@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 import './register.css'
 import useRegister from '../../store/registerStore';
+import { useAuth } from '../../context/AuthContext';
 
 function Register () {
+  const {addUser, createUserMjs, setCreateUserMjs } = useAuth()
   const {isRegisterOpen, setRegisterClose} = useRegister()
   const emailLabelRef = useRef(null);
   const passwordLabelRef = useRef(null);
@@ -38,6 +40,7 @@ function Register () {
     let handler = (e)=>{
       if (signInRef.current && !signInRef.current.contains(e.target)) {
         setRegisterClose();
+        setCreateUserMjs(null);
       }
     } 
     document.addEventListener("mousedown", handler)
@@ -46,31 +49,46 @@ function Register () {
       document.removeEventListener("mousedown", handler)
     }
   },[])
+
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+		const form = e.target
+		const formData = new FormData(form)
+
+		const name = formData.get("username") 
+		const password = formData.get("password")
+		const email = formData.get("email")
+
+    addUser(name, password, email)
+    
+		form.reset()
+  }
+
+
   return (
     <>
     {isRegisterOpen && 
     <div className="signIn_mainContainer">
     <div ref={signInRef} className="container">
       <h1>Create new account</h1>
-      <h4>We´re currently working to implement this feature</h4>
-      <form>
+      <form onSubmit={(e)=> handleSubmit(e)}>
         <div className="form-control">
-          <input type="text" required />
+          <input name='username' type="text" required />
           <label ref={usernameLabelRef}>Username</label> 
         </div>
         <div className="form-control">
-          <input type="text" required />
+          <input name='email' type="text" required />
           <label ref={emailLabelRef}>Email</label> 
         </div>
 
         <div className="form-control">
-          <input type="password" required/>
+          <input name='password' type="password" required/>
           <label ref={passwordLabelRef}>Password</label>
         </div>
 
         <button className="btn">Create</button>
-
       </form>
+        {createUserMjs && <p>{createUserMjs}</p>}
     </div>
   </div>
     }

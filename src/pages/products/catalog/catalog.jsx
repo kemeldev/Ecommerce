@@ -13,7 +13,7 @@ function Catalog() {
           {
             globalProducts.map(product => (
               <Link
-                  to={`/details/${product.id}`}
+                  to={`details/${product.id}`}
                   key={product.id}
                   state={product}
                         >

@@ -9,7 +9,7 @@ function Categories() {
     {title : "football", image: categoryFootball,},
     {title : "running", image: categoryRunning },
     {title : "training", image: categoryTraining },
-    {title : "style", image: categoryStyle }]
+    {title : "tennis", image: categoryStyle }]
 
   const { setGlobalFilters, setGlobalProducts, globalFilters  } = useFiltersStore()
   const handleCategoryChange = (category) => {
@@ -34,7 +34,7 @@ function Categories() {
         <div className='category_List'>
           {categoryImages.slice(0,4).map((category, index) => (
             
-            <Link to={"/products"} key={index}>
+            <Link to={"/Ecommerce/products"} key={index}>
             <div className='category_gridElement' onClick={()=> handleCategoryChange(category.title)}>
               <img src={category.image} alt={category.title} />
               <div className='category_gridElementContent'>

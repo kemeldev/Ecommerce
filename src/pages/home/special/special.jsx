@@ -14,8 +14,8 @@ function Special() {
           </div>
 
           <div className='special_text'>
-            <h2><strong>SPECIAL</strong>  OFFER</h2>
-            <p>Create an account and get 40% of discount un your first pair of shoes</p>
+            <h2><strong>SPECIAL</strong>  OFFER *</h2>
+            <p>Create an account and get 40% of discount on your first pair of shoes</p>
             <div className='special_btns'>
               <button onClick={()=> setRegisterOpen()}>
                 Register Now

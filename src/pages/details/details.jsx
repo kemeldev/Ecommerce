@@ -8,6 +8,7 @@ import { useEffect } from 'react'
 import { shoppingCart } from '../../assets/icons'
 import useCartStore from '../../store/cartStore'
 import useSignIn from '../../store/signInStore'
+import { useAuth } from '../../context/AuthContext'
 
 function Details() {
   const { state } = useLocation()
@@ -15,6 +16,8 @@ function Details() {
   // const numericId = parseInt(id)
   const {cartList, resetSizeError} = useCartStore()
   const {setSignInOpen} = useSignIn()
+  const {loggedUser, logout} = useAuth()
+
 
 
   useEffect(() => {
@@ -29,14 +32,23 @@ function Details() {
     <>
       <div className='details_navbar'>
       <header className='navbar_mainContainer navdetails'>
-        <Link to="/products">
+        <Link to="/Ecommerce/products">
           <h3 className='details_back'>
             Go Back
           </h3>
         </Link>
         <div className='navbar_SignAndCart'>
-          <p onClick={()=> setSignInOpen()}>Sign In /</p>
-          <Link to="/shoppingCart">
+
+          {loggedUser ? 
+              <div style={{display: "flex"}}>
+                <p>{loggedUser} / </p>
+                <p onClick={()=> logout()}>Log Out /</p> 
+              </div> 
+              : 
+              <p onClick={()=> setSignInOpen()}>Sign In /</p>
+            }
+          
+          <Link to="/Ecommerce/shoppingCart">
             <div className='navbar_shoppingCartIcon'>
               <img src={shoppingCart} alt="shopping cart icon" />
               <div className='navbar_notification'>

@@ -8,6 +8,9 @@ import ShoppingCart from './pages/shoppingCart/shoppingCart'
 import Checkout from './pages/checkout/checkout'
 import SignIn from './components/signIn/signIn'
 import Register from './components/register/register'
+import AdminPage from './pages/admin/adminPage'
+import ProtectedRoute from './context/ProtectedRoute'
+import { useState } from 'react'
 
 
 function App() {
@@ -18,13 +21,15 @@ function App() {
       <Register />
       <Routes>
           <Route path='/Ecommerce/' element={<Home />} />
-          <Route path='/products' element={<Products />} />
-          <Route path='/details/:id' element={<Details />} />
-          <Route path='/shoppingCart' element={<ShoppingCart />} />
-          <Route path='/checkout' element={<Checkout />} />
+          <Route path='/Ecommerce/products' element={<Products />} />
+          <Route path='/Ecommerce/products/details/:id' element={<Details />} />
+          <Route path='/Ecommerce/shoppingCart' element={<ShoppingCart />} />
+          <Route path='/Ecommerce/shoppingCart/checkout' element={<Checkout />} />
+          <Route path='/Ecommerce/adminDashboard' element={<AdminPage />} />
           <Route path='/*' element={<NotFound />} />
+      </Routes>
 
-        </Routes>
+          {/* <ProtectedRoute path="/admin" element={<AdminPage />} /> */}
     </>
   )
 }

@@ -54,6 +54,20 @@ const useCartStore = create((set) => ({
       shoppingCartNotification: 0,
     }),
 
+  resetCart: () =>
+    set({
+      cartList: [],
+    }),
+
+  changeItemAmount: (productId, size, newAmount) => {
+    set((state) => ({
+      cartList: state.cartList.map((item) =>
+        item.id === productId && item.size === size
+          ? { ...item, amount: newAmount }
+          : item
+      ),
+    }));
+  },
 
 }));
 

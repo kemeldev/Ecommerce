@@ -28,7 +28,7 @@ function Brands() {
         <h2>BRANDS WE LOVE</h2>
         <div className='brands_List'>
           {brands.map((brand, index) => (
-            <Link to="/products" key={index}>
+            <Link to="/Ecommerce/products" key={index}>
               <div className='brands_gridElement' onClick={() => handleBrandChange(brand.brand)}>
                 <img src={brand.img} alt="brand Logo" />
               </div>

@@ -3,8 +3,15 @@ import './CartItem.css'
 import PropTypes from 'prop-types';
 import useCartStore from '../../../store/cartStore';
 
-function CartItem({title,size, price, image}) {
-  const {removeFromCart} = useCartStore()
+function CartItem({productId, title,size, price, image, amount}) {
+  const {removeFromCart, changeItemAmount} = useCartStore()
+
+
+  const handleChange = (e) =>{
+    const selectedValue = Number(e.target.value);
+    
+    changeItemAmount(productId, size, selectedValue)
+  }
 
   return (
     <>
@@ -17,7 +24,7 @@ function CartItem({title,size, price, image}) {
           <p>$ {price}</p>
           <h6>Size {size}</h6>
           <h6>Amount</h6>
-          <select>
+          <select value={amount} onChange={(e)=> handleChange(e)}>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -40,6 +47,8 @@ CartItem.propTypes = {
   title: PropTypes.string,
   size: PropTypes.number,
   price: PropTypes.number,
+  productId: PropTypes.number,
+  amount: PropTypes.number,
   image: PropTypes.string ,
   
 };

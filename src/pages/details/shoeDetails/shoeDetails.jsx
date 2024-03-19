@@ -9,11 +9,10 @@ import useCartStore from '../../../store/cartStore';
 
 function ShoeDetails({details}) {
   const [selectedSize, setSelectedSize] = useState(null);
-  const {addToCart, cartList, sizeError} = useCartStore()
+  const {addToCart, sizeError} = useCartStore()
 
-  const object = {...details, size: selectedSize}
+  const object = {...details, size: selectedSize, amount: 1}
 
-  console.log(cartList);
 
   useEffect(() => {
     window.scrollTo(0, 0)

@@ -49,14 +49,14 @@
 
 }
 
-.footer_flexContainer_categories>p,
-.footer_flexContainer_brands>p {
+.footer_flexContainer_categories a p,
+.footer_flexContainer_brands>a p {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
-.footer_flexContainer_categories>p:hover,
-.footer_flexContainer_brands>p:hover {
+.footer_flexContainer_categories a p:hover,
+.footer_flexContainer_brands a p:hover {
   transform: translateX(0.5rem);
   color: red;
 }
