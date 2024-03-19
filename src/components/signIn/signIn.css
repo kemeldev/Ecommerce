@@ -15,7 +15,7 @@
   /* Hide horizontal overflow */
   overflow-y: hidden;
   margin: 0;
-  z-index: 2;
+  z-index: 3;
 }
 
 .container {
@@ -102,8 +102,17 @@
   transform: translateY(-30px);
 }
 
-.text p {
+.text span {
   cursor: pointer;
   color: rgb(7, 52, 66);
   font-weight: bold;
+  border-bottom: solid rgb(7, 52, 66) 2px;
+}
+
+.text span:hover {
+  color: rgb(123, 255, 0);
+}
+
+.signIn_mainContainer h5 {
+  color: yellowgreen;
 }

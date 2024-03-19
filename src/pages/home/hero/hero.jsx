@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './hero.css'
 import { heroAdidas, heroConverse, heroNike } from '../../../assets/images'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import useFiltersStore from '../../../store/filterstore'
 
 function Hero() {
@@ -43,7 +43,7 @@ function Hero() {
 
           <div className='hero_content_text'>
             <p>EXPRESS YOUR STYLE SOMETHING THAT MATTERS</p>
-            <Link to="/products">
+            <Link to="/Ecommerce/products">
               <button className='hero_showNowBtn' onClick={()=> handleFilterChange()}>
                 SHOP NOW
               </button>

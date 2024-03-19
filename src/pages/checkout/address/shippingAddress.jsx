@@ -29,6 +29,24 @@ export function ShippingAddress () {
       const { name, value } = e.target;
       setShippingAddress({ ...shippingAddress, [name]: value });
     };
+
+    const handleCheckboxChange = (e) => {
+      const isChecked = e.target.checked;
+      setSameAsBilling(isChecked);
+      if (isChecked) {
+        setShippingAddress({
+          ...billingAddress,
+        });
+      } else {
+        setShippingAddress({
+          name: '',
+          street: '',
+          city: '',
+          state: '',
+          zip: '',
+        });
+      }
+    };
   return (
     <>
       <div className='shipping_mainContainer'>
@@ -84,7 +102,7 @@ export function ShippingAddress () {
             id="sameAs" 
             name="sameAs" 
             checked={sameAsBilling} 
-            onChange={(e) => setSameAsBilling(e.target.checked)} 
+            onChange={handleCheckboxChange} 
           />
         </div>
         

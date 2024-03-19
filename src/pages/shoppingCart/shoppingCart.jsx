@@ -15,7 +15,7 @@ function ShoppingCart() {
 
   return (
     <>
-      <Link to="/products">
+      <Link to="/Ecommerce/products">
           <h3 className='checkout_back'>
             Go Back
           </h3>

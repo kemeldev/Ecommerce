@@ -49,19 +49,23 @@ function Footer() {
 
           <div className='footer_flexContainer_categories'>
             <h4>Categories</h4>
+            <Link to="/Ecommerce/products">
             <p onClick={() => handleCategoryChange("outdoor")}>Outdoor</p>
             <p onClick={() => handleCategoryChange("training")}>Training</p>
             <p onClick={() => handleCategoryChange("running")}>Running</p>
             <p onClick={() => handleCategoryChange("tennis")}>Style</p>
             <p onClick={() => handleCategoryChange("football")}>Football</p>
+            </Link>
           </div>
 
           <div className='footer_flexContainer_brands'>
             <h4>Brands</h4>
+            <Link to="/Ecommerce/products">
             <p onClick={() => handleBrandChange("converse")}>Converse</p>
             <p onClick={() => handleBrandChange("adidas")}>Adidas</p>
             <p onClick={() => handleBrandChange("nike")}>Nike</p>
             <p onClick={() => handleBrandChange("under armour")}>Under Armour</p>
+            </Link>
           </div>
 
           <div className='footer_flexContainer_contact'>

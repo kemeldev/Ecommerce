@@ -44,7 +44,7 @@ function Favourites({title}) {
         <div className='favourite_List'>
           {popularProducts.map((product) => (
             <Link
-              to={`/details/${product.id}`}
+              to={`/Ecommerce/products/details/${product.id}`}
               key={product.id}
               state={product}
                   >

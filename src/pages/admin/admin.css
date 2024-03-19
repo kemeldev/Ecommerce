@@ -1,0 +1,11 @@
+.admin_mainContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(43, 43, 43);
+  color: bisque;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}

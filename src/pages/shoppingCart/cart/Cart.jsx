@@ -2,6 +2,8 @@ import CartItem from '../cartItem/cartItem'
 import Summary from '../checkout/summary'
 import './Cart.css'
 import useCartStore from '../../../store/cartStore'
+import { Link } from 'react-router-dom'
+import ButtonGeneral from '../../../components/buttonGeneral'
 
 function Cart() {
   const {cartList} = useCartStore()
@@ -18,10 +20,12 @@ function Cart() {
             {cartList.map((product, index) => (
               <div key={index}>
                 <CartItem 
+                  productId={product.id}
                   title={product.title}
                   price={product.price}
                   size={product.size}
                   image={product.thumbnail}
+                  amount={product.amount}
                 />
               </div>
             ))}
@@ -30,6 +34,11 @@ function Cart() {
 
         <div className='cart_checkout'>
           <Summary />
+          <div className='summary_btn'>
+          <Link to="/Ecommerce/shoppingCart/checkout">
+            <ButtonGeneral title="Procced with Checkout" />
+          </Link>
+        </div>
         </div>
 
       </div>

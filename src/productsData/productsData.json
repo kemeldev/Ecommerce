@@ -477,6 +477,23 @@
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8ac118d2-4395-477d-8ce5-6be00202fd92/phantom-gx-2-elite-lv8-botas-de-futbol-de-perfil-bajo-fg-6057lF.png",
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2168c8d1-d7be-4679-b603-25883f09d83b/phantom-gx-2-elite-lv8-botas-de-futbol-de-perfil-bajo-fg-6057lF.png"
       ]
+    },
+    {
+      "id": 28,
+      "title": "Nike ACG Mountain Fly 2",
+      "description": "On the trail, details matter. Fast, rugged and ready for whatever wild comes your way, the updated ACG Mountain Fly 2 is here to take you to the top. Over glacial-smoothed granite and root-twisted trails, we've reinforced every step with an extended toe cap and mountain-tough rubber sidewalls.",
+      "price": 150.25,
+      "discountPercentage": 16.8,
+      "rating": 4.38,
+      "stock": 113,
+      "brand": "nike",
+      "category": "outdoor",
+      "thumbnail": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/56c09708-eac7-4915-90dd-0ef17764ba53/acg-mountain-fly-2-low-mens-shoes-kl94gN.png",
+      "images": [
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6c6d0bc2-3733-45a1-933f-1442e61ed787/acg-mountain-fly-2-low-mens-shoes-kl94gN.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3a8fe0ee-bf63-4911-b913-bfac1c796419/acg-mountain-fly-2-low-mens-shoes-kl94gN.png",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1ae2c3aa-bf8b-47bc-a4cb-e9bc9af02713/acg-mountain-fly-2-low-mens-shoes-kl94gN.png"
+      ]
     }
   ],
   "total": 100,
